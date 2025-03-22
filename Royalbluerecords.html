@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Blue Records</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('image2.png') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .about {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+        }
+        .enquiry {
+            position: fixed;
+            right: -300px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 250px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px 0 0 10px;
+            transition: right 0.5s ease-in-out;
+        }
+        .enquiry input, .enquiry button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .enquiry button {
+            background: royalblue;
+            color: white;
+            cursor: pointer;
+        }
+        .enquiry-toggle {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: royalblue;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 10px 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Royal Blue Records</h1>
+        <div class="about">
+            <p>Welcome to Royal Blue Records, your premier destination for discovering fresh and captivating music. Join us on our journey through sound.</p>
+        </div>
+    </div>
+    <div class="enquiry" id="enquiryForm">
+        <h3>Enquiry</h3>
+        <form action="mailto:alternatesoren@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+	    <input type="text" name="message" placeholder="Your Message" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <div class="enquiry-toggle" onclick="toggleEnquiry()">Enquire</div>
+    <script>
+        function toggleEnquiry() {
+            var form = document.getElementById('enquiryForm');
+            if (form.style.right === '-300px') {
+                form.style.right = '0';
+            } else {
+                form.style.right = '-300px';
+            }
+        }
+    </script>
+</body>
+</html>
